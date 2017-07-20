@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <title><h:outputText value="#{msg.session_expired}"/></title>
+    <meta http-equiv="refresh" content="0;url=#{request.contextPath}/login.jsf"/>
+</head>
+<body>
+<h1><h:outputText value="#{msg.session_expired}"/></h1>
+<h3><h:outputText value="#{msg.you_will_be_redirected_to_login_page}"/></h3>
+<p><a href="#{request.contextPath}/login.jsf"><h:outputText
+        value="#{msg.click_here_if_redirect_didn_t_work_or_when_you_re_impatient}"/></a>.</p>
+</body>
+</html>

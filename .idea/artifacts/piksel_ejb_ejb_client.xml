@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="piksel_ejb:ejb-client">
+    <output-path>$PROJECT_DIR$/piksel_ejb/target</output-path>
+    <root id="archive" name="piksel_ejb-0.0.1-SNAPSHOT-client.jar">
+      <element id="artifact" artifact-name="piksel_ejb:ejb-client exploded" />
+    </root>
+  </artifact>
+</component>

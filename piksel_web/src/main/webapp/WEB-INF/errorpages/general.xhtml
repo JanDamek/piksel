@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Error Page</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:graphicImage library="images" name="error.jpg" style="float: left; padding-right: 1em;" width="150"/>
+        <p>To our chagrin, an internal error has occurred in this program. Please contact technical support.</p>
+        <p>If instructed by our support staff, please copy and paste the following report into an email message <a
+                href="mailto:support@mazlusek.com">support@mazlusek.com</a> or on <a
+                href="http://mantis.mazlusek.com/">Mantis BT</a>. Where you can leave the error description without
+            registration.</p>
+        <div class="clear"/>
+        <h:panelGrid columns="2" title="#{msg.error}">
+            <h:outputText value="#{msg.stackTrace}"/>
+            <h:inputTextarea value="#{errorController.stackTrace}" rows="40" cols="80"
+                             readonly="true"/>
+            <h:outputText value="#{msg.shortDescribrWhenOcurre}"/>
+            <h:inputTextarea value="#{errorController.shortDescribe}" rows="4" cols="80"/>
+            <h:commandButton value="#{msg.tryToSend}" action="#{errorController.sendError}"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

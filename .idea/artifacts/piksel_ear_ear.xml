@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="piksel_ear:ear">
+    <output-path>$PROJECT_DIR$/piksel_ear/target</output-path>
+    <root id="archive" name="piksel_ear-0.0.1-SNAPSHOT.ear">
+      <element id="artifact" artifact-name="piksel_ear:ear exploded" />
+    </root>
+  </artifact>
+</component>
