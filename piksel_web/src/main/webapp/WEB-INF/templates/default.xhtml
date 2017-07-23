@@ -1,185 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="#{languageController.i18n}"
-      xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<f:metadata>
-    <f:viewParam name="i18n" value="#{languageController.i18n}"/>
-</f:metadata>
-<f:view locale="#{languageController.i18n}"/>
 <f:view contentType="text/html"/>
 <h:head>
-    <title><h:outputText value="#{msg.mazlusekH2IndexPage} | #{msg.title}"/></title>
-    <h:outputScript library="js" name="mazlusek.js"/>
-    <h:outputStylesheet library="css" name="style.css"/>
-    <meta http-equiv="Content-language" content="#{languageController.i18n}"/>
+    <title><h:outputText value="#{msg.piksel_coding_challenge}"/></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-    <meta name="msapplication-config" content="/cfg/browserconfig.xml"/>
-    <meta name="theme-color" content="#db5945"/>
-    <!-- For old IEs -->
-    <link rel="shortcut icon" href="/cfg/favicon.ico"/>
-    <!-- For new browsers - multisize ico  -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/cfg/favicon.ico"/>
-    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cfg/favicon-152.png"/>
-    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/cfg/favicon-144.png"/>
-    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/cfg/favicon-120.png"/>
-    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/cfg/favicon-114.png"/>
-    <!-- For iPhone 6+ -->
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/cfg/favicon-180.png"/>
-    <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/cfg/favicon-72.png"/>
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="/cfg/favicon-57.png"/>
-    <!-- For Old Chrome -->
-    <link rel="icon" href="/cfg/favicon-32.png" sizes="32x32"/>
-    <!-- For IE10 Metro -->
-    <meta name="msapplication-TileColor" content="#FFFFFF"/>
-    <meta name="msapplication-TileImage" content="/cfg/favicon-144.png"/>
-    <meta name="theme-color" content="#ffffff"/>
-    <!-- Chrome for Android -->
-    <link rel="manifest" href="/cfg/manifest.json"/>
-    <link rel="icon" sizes="192x192" href="${pageContext.request.contextPath}/cfg/favicon-192.png"/>
-
-    <ui:insert name="header">
-        [Template content will be inserted here]
-    </ui:insert>
 </h:head>
 <h:body>
-    <h:form>
-        <p:growl autoUpdate="true" escape="false" showDetail="true" showSummary="true" globalOnly="true"/>
-    </h:form>
-    <div id="eu-cookie-bar" style="display: none; color: white; width: 50%; margin: 0 auto; text-align: center">
-        <h:outputText value="${msg.cookieLaw}"/>
-        <h:outputLink target="_blank" rel="nofollow" value="http://www.aboutcookies.org/">
-            <h:outputText value="${msg.cookieLink}"/>
-        </h:outputLink>.
-        <p:button id="euCookieAcceptWP" onclick="euAcceptCookiesWP();return false;" value="${msg.cookieUnderstande}"/>
-    </div>
     <div id="main">
         <!-- header begins -->
         <div id="header">
             <div id="buttons">
-                <div class="but1">
-                    <h:link value="#{msg.ChatTitle}" outcome="/chat.xhtml"
-                            styleClass="razd_but"/>
-                </div>
-                <div class="but2">
-                    <h:link value="#{msg.seznamkaTitle}" outcome="/dating.xhtml"
-                            styleClass="razd_but"/>
-                </div>
-                <!--<div class="but3">-->
-                <!--<h:link value="#{msg.gallery}" outcome="/gallery.xhtml"-->
-                <!--styleClass="razd_but"/>-->
-                <!--</div>-->
-                <div class="but3">
-                    <h:link value="#{msg.articleTitle}" outcome="/article.xhtml"
-                            styleClass="razd_but"/>
-                </div>
-                <div class="but4">
-                    <h:link value="#{msg.naNocTitle}" outcome="/to_night.xhtml"
-                            styleClass="razd_but"/>
-                </div>
-            </div>
-            <div class="language">
-                <h:form prependId="false">
-                    <h:panelGrid columns="1">
-                        <h:outputText value="#{msg['language']} "/>
-                        <p:selectOneMenu value="#{languageController.i18n}"
-                                         onchange="submit();"
-                                         style="min-width: auto !important;"
-                                         valueChangeListener="#{languageController.localeChanged}">
-                            <f:selectItems value="#{languageController.countries}" var="n"
-                                           itemLabel="#{n.label}" itemValue="#{n.i18n}"/>
-                        </p:selectOneMenu>
-                    </h:panelGrid>
-                </h:form>
-            </div>
-            <div id="logo">
-                <h:link outcome="/index" value="#{msg.mazlusekH2IndexPage}"/><br/>
-                <h3>
-                    <h:link outcome="/index" value="#{msg.title}"/>
-                </h3>
+                <h:link value="#{msg.home}" outcome="/index.xhtml"/> |
+                <h:link value="#{msg.allClients}" outcome="/client.xhtml"/> |
+                <h:link value="#{msg.allStudios}" outcome="/studio.xhtml"/>
             </div>
         </div>
-        <!-- header ends -->
+
         <div id="cont_out">
-            <!-- content begins -->
-            <div id="content">
-                <ui:include src="/template_include/right.xhtml"/>
-                <div id="center">
-                    <h:panelGroup class="reklama_header" styleClass="advertising_top"
-                                  rendered="#{sessionService.showAdsense}">
-                        <div class="rounded">
-                            <span class="reklama">#{msg.REKLAMA}</span>
-                            <div>
-                                <ui:include src="/banners/top.xhtml"/>
-                            </div>
-                        </div>
-                    </h:panelGroup>
-                    <br/>
-                    <p:panel id="publicMsgBox" styleClass="noBackground"
-                             style="border: none !important; padding: 0 !important;"/>
-                    <p:socket channel="/msg" autoConnect="true" onMessage="handleMsg" transport="sse"/>
-                    <div class="rounded">
-                        <ui:insert name="content">
-                            [Template content will be inserted here]
-                        </ui:insert>
-                    </div>
-                    <br/>
-                    <h:panelGroup rendered="#{sessionService.showFBLike or sessionService.showFBComments}">
-                        <div class="rounded">
-                            <br/>
-                            <h:panelGroup rendered="#{sessionService.showFBLike}">
-                                <div class="fb-like"
-                                     data-share="true"
-                                     data-width="450"
-                                     data-show-faces="true">
-                                </div>
-                            </h:panelGroup>
-                            <h:panelGroup rendered="#{sessionService.showFBComments}">
-                                <div class="fb-comments"
-                                     data-href="#{request.requestURL}"
-                                     data-numposts="5"></div>
-                            </h:panelGroup>
-                        </div>
-                    </h:panelGroup>
-                </div>
-                <div style="clear: both"/>
-            </div>
+            <ui:insert name="content">
+                [Template content will be inserted here]
+            </ui:insert>
         </div>
-        <!-- content ends -->
-        <!-- footer begins -->
-        <div id="footer">Copyright 2017. Designed by Flash Templates |
-            This product includes GeoLite2 data created by MaxMind, available fromAddress
-            <h:outputLink value="http://www.maxmind.com" target="_blank">http://www.maxmind.com</h:outputLink>.
-            <br/>
-            <a href="/msg/privacy.jsf">#{msg.PrivateLaves}</a> |
-            <a href="/msg/uses.jsf">#{msg.uses}</a> |
-            <a href="/msg/contacts.jsf">#{msg.contacts}</a> |
-            <a href="/msg/how_use.jsf">#{msg.how_use}</a> |
-            <h:outputLink value="https://mantis.damek-soft.eu" target="_blank">
-                <abbr title="Mantis Bug Tracker">Mantis BT</abbr>
-            </h:outputLink> | <h:outputText value="#{msg.nick} #{msg.online}: #{indexController.sessionCountF}"/>
-        </div>
-        <!-- footer ends -->
-        <span style="text-align: center; font-size: 8px;">
-            <h:outputText value="#{indexController.sessionCount}"/>
-        </span>
     </div>
-    <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"/>
-    <p:overlayPanel styleClass="whiteBackground" widgetVar="statusDialog"
-                    style="position: fixed;right: 5px;bottom: 5px;">
-        <p:graphicImage library="images" name="ajaxloading.gif" width="125" height="125"/>
-    </p:overlayPanel>
+
 </h:body>
 </html>
 

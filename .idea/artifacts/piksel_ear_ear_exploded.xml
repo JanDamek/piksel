@@ -10,6 +10,7 @@
         <element id="artifact" artifact-name="piksel_ejb:ejb exploded" />
       </element>
       <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final" />
         <element id="archive" name="piksel_common-0.0.1-SNAPSHOT.jar">
           <element id="module-output" name="piksel_common" />
         </element>

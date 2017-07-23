@@ -11,36 +11,9 @@
         <param-value>Development</param-value>
     </context-param>
     <context-param>
-        <param-name>primefaces.THEME</param-name>
-        <param-value>cupertino</param-value>
-    </context-param>
-    <context-param>
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
         <param-value>true</param-value>
     </context-param>
-    <filter>
-        <filter-name>PrimeFaces FileUpload Filter</filter-name>
-        <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>PrimeFaces FileUpload Filter</filter-name>
-        <servlet-name>MazlusekDispatcher</servlet-name>
-    </filter-mapping>
-
-    <servlet>
-        <servlet-name>Push Servlet</servlet-name>
-        <servlet-class>org.primefaces.push.PushServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-        <init-param>
-            <param-name>org.atmosphere.cpr.broadcasterCacheClass</param-name>
-            <param-value>org.atmosphere.cache.UUIDBroadcasterCache</param-value>
-        </init-param>
-        <async-supported>true</async-supported>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Push Servlet</servlet-name>
-        <url-pattern>/primepush/*</url-pattern>
-    </servlet-mapping>
 
     <error-page>
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>

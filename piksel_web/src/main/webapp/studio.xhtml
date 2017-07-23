@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/default.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <h2 class="h3">
+            <h:outputText value="#{msg.allStudios}"/>
+        </h2>
+
+        <p:dataTable value="#{studioController.allStudios}" var="studio">
+            <p:column>
+                <p:rowToggler/>
+            </p:column>
+            <p:column headerText="#{msg.studio_id}">
+                <h:outputText value="#{studio.id}"/>
+            </p:column>
+            <p:column headerText="#{msg.studio_name}">
+                <h:outputText value="#{studio.name}"/>
+            </p:column>
+            <p:column headerText="#{msg.studio_viewings}">
+                <h:outputText value="#{studio.viewings}"/>
+            </p:column>
+            <p:rowExpansion>
+                <p:dataTable value="#{studio.episodes}" var="episode">
+                    <p:column headerText="#{msg.episode_id}">
+                        <h:outputText value="#{episode.id}"/>
+                    </p:column>
+                    <p:column headerText="#{msg.episode_name}">
+                        <h:outputText value="#{episode.name}"/>
+                    </p:column>
+                    <p:column headerText="#{msg.episode_viewings}">
+                        <h:outputText value="#{episode.viewings}"/>
+                    </p:column>
+                </p:dataTable>
+            </p:rowExpansion>
+        </p:dataTable>
+
+    </ui:define>
+</ui:composition>

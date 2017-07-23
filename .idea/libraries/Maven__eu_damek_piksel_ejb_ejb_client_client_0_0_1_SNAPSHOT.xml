@@ -4,9 +4,11 @@
       <root url="jar://$MAVEN_REPOSITORY$/eu/damek/piksel_ejb/0.0.1-SNAPSHOT/piksel_ejb-0.0.1-SNAPSHOT-client.jar!/" />
     </CLASSES>
     <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/piksel_ejb/piksel_ejb-0.0.1-SNAPSHOT-javadoc.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/eu/damek/piksel_ejb/0.0.1-SNAPSHOT/piksel_ejb-0.0.1-SNAPSHOT-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
+      <root url="jar://$PROJECT_DIR$/piksel_ejb/piksel_ejb-0.0.1-SNAPSHOT-sources.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/eu/damek/piksel_ejb/0.0.1-SNAPSHOT/piksel_ejb-0.0.1-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>

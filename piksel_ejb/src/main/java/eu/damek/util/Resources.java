@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class Resources {
 
     /**
-     * Produce EntityManager for unit name "piksel"
+     * Produce EntityManager for unit name "piksel". Is used for @Inject annotation
      */
     @Produces
     @PersistenceContext(unitName = "piksel")

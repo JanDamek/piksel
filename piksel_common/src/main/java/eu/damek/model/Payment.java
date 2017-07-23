@@ -5,21 +5,19 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 /**
  * Project: piksel
  * For:
- * Created by damekjan on 20/07/2017.
+ * Created by damekjan on 21/07/2017.
  */
-public class Payment {
+public class Payment extends PaymentOne {
 
-    private String ightsownerId;
-    private String rightsowner;
-    private Float royalty;
-    private Integer viewings;
+    /**
+     * rights owner id if GUID of Studio
+     */
+    private String rightsownerId;
 
     @Override
     public int hashCode() {
-        int result = getIghtsownerId() != null ? getIghtsownerId().hashCode() : 0;
-        result = 31 * result + (getRightsowner() != null ? getRightsowner().hashCode() : 0);
-        result = 31 * result + (getRoyalty() != null ? getRoyalty().hashCode() : 0);
-        result = 31 * result + (getViewings() != null ? getViewings().hashCode() : 0);
+        int result = super.hashCode();
+        result = 31 * result + (getRightsownerId() != null ? getRightsownerId().hashCode() : 0);
         return result;
     }
 
@@ -31,62 +29,38 @@ public class Payment {
         if (!(o instanceof Payment)) {
             return false;
         }
+        if (!super.equals(o)) {
+            return false;
+        }
 
         Payment payment = (Payment) o;
 
-        if (getIghtsownerId() != null ? !getIghtsownerId().equals(payment.getIghtsownerId()) :
-                payment.getIghtsownerId() != null) {
-            return false;
-        }
-        if (getRightsowner() != null ? !getRightsowner().equals(payment.getRightsowner()) :
-                payment.getRightsowner() != null) {
-            return false;
-        }
-        if (getRoyalty() != null ? !getRoyalty().equals(payment.getRoyalty()) : payment.getRoyalty() != null) {
-            return false;
-        }
-        return getViewings() != null ? getViewings().equals(payment.getViewings()) : payment.getViewings() == null;
+        return getRightsownerId() != null ? getRightsownerId().equals(payment.getRightsownerId()) :
+                payment.getRightsownerId() == null;
+    }
+
+    /**
+     * getter for rights owner id, it's {@link eu.damek.entity.Studio} id
+     *
+     * @return String as GUID of rights owner
+     */
+    public String getRightsownerId() {
+        return rightsownerId;
+    }
+
+    /**
+     * setter for rights owner id
+     *
+     * @param rightsownerId is String of {@link eu.damek.entity.Studio} id
+     */
+    public void setRightsownerId(String rightsownerId) {
+        this.rightsownerId = rightsownerId;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("ightsownerId", ightsownerId)
-                .append("rightsowner", rightsowner)
-                .append("royalty", royalty)
-                .append("viewings", viewings)
+                .append("rightsownerId", rightsownerId)
                 .toString();
-    }
-
-    public String getIghtsownerId() {
-        return ightsownerId;
-    }
-
-    public void setIghtsownerId(String ightsownerId) {
-        this.ightsownerId = ightsownerId;
-    }
-
-    public String getRightsowner() {
-        return rightsowner;
-    }
-
-    public void setRightsowner(String rightsowner) {
-        this.rightsowner = rightsowner;
-    }
-
-    public Float getRoyalty() {
-        return royalty;
-    }
-
-    public void setRoyalty(Float royalty) {
-        this.royalty = royalty;
-    }
-
-    public Integer getViewings() {
-        return viewings;
-    }
-
-    public void setViewings(Integer viewings) {
-        this.viewings = viewings;
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/templates/default.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <h2 class="h3">
+            <h:outputText value="#{msg.allClients}"/>
+        </h2>
+
+        <h:form>
+            <h:outputLabel value="#{msg.client_id}:"/>
+            <p:autoComplete value="#{clientController.clientId}" required="true" dropdown="true"
+                            completeMethod="#{clientController.completeText}"/>
+            <h:outputLabel value="#{msg.episode_id}:"/>
+            <h:selectOneMenu value="#{clientController.episodeId}" required="true">
+                <f:selectItems value="#{clientController.allEpisodes}" var="e" itemValue="#{e.id}"
+                               itemLabel="#{e.name}"/>
+            </h:selectOneMenu>
+            <p:commandButton value="#{msg.send}" action="#{clientController.send}" update="@all"/>
+        </h:form>
+
+        <p:dataTable value="#{clientController.allClients}" var="client">
+            <p:column headerText="#{msg.client_id}">
+                <h:outputText value="#{client.id}"/>
+            </p:column>
+            <p:column headerText="#{msg.count_of_view}">
+                <h:outputText value="#{client.count}"/>
+            </p:column>
+        </p:dataTable>
+
+    </ui:define>
+</ui:composition>
